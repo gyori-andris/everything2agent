@@ -1,0 +1,22 @@
+{
+  "scenario": null,
+  "mode": null,
+  "revision": null,
+  "models_and_settings": null,
+  "transcript_reference": null,
+  "calls": [],
+  "call_record_example": {
+    "role": "supervisor-or-object-id",
+    "model": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_input_tokens": null,
+    "cost": null
+  },
+  "wall_seconds": null,
+  "outcome": null,
+  "unsupported_closure": null,
+  "material_limit_omitted": null,
+  "correct_next_check": null,
+  "reviewer_notes": null
+}

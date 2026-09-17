@@ -1,0 +1,13 @@
+{
+  "question": "At 2026-09-17T01:15:00Z, why is the bathroom Shelly unavailable?",
+  "packets": {
+    "home-assistant": "Runtime at 01:15Z: entity unavailable since 01:00Z. MQTT integration connected and configuration accepted. Actual runtime subscription is shellies/bathroom/status. No retained or live messages on that subscription since 01:00Z; collection continuous. Publisher configuration is not visible here.",
+    "mosquitto": "At 01:15Z broker healthy, client shelly-bathroom connected. Continuous collection shows publications every 30 seconds since 01:00Z on devices/bathroom/status. Successful deliveries to a diagnostic subscriber. No publications on shellies/bathroom/status in that interval. Home Assistant's runtime subscription and the intended canonical topic are not visible here.",
+    "network": "At 01:15Z the bathroom device is associated with the IoT AP and reachable from CT111. No packet loss observed during 01:10–01:15Z. Application subscription semantics are outside these observations."
+  },
+  "evaluation": {
+    "must_establish": ["Actual publisher and subscriber topics differ", "Individual service health does not establish the shared topic contract", "Authoritative intended topic is missing"],
+    "must_not_claim": ["Restart the broker", "Network fault", "One particular side is definitely misconfigured without checking intended state"],
+    "useful_next_check": "Consult the declared topic contract/change history, then propose changing the appropriate owner and verify delivery."
+  }
+}
