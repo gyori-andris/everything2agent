@@ -1,8 +1,8 @@
 # Agent Objects
 
-Give a resource an agent identity, responsibility, context, and tools. Ask it open
-questions. Let a supervisor coordinate across objects without loading every
-object's internals into its own context.
+Give an existing resource an agent facet: a scoped personality, responsibility,
+and context. Ask it open questions. Let a supervisor coordinate across objects
+without loading every object's internals into its own context.
 
 `everything2agent` is an early, portable convention and a Hermes reference
 experiment. **Status: runnable fixture rehearsal and draft skills; live Hermes
@@ -12,18 +12,19 @@ integration and token savings are not yet validated.**
 
 An **Agent Object** represents a particular resource: a containerized service,
 repository, dataset, or tool within a biology pipeline. `OBJECT.md` describes its
-identity, responsibility, context, available bindings, and related objects.
-The resource stays where it is. Its agent can be instantiated when needed.
+identity, roots, personality, context, and related objects. The resource stays
+where it is. Its agent can be instantiated when needed.
 
-Identity and resource bindings are explicit. Questions and reasoning remain
-open-ended. There is no mandatory method catalog or domain-specific answer schema.
+Identity and object roots are explicit. Questions and reasoning remain open-ended.
+There is no mandatory method catalog, capability registry, or domain-specific
+answer schema.
 An agent must explain the scope and limits of its answer, in ordinary language.
 
 ```text
 Supervisor ── open question ──> Agent Object
-                                 ├── source and documentation
-                                 ├── runtime inspection tools
-                                 └── observations
+                                 ├── scoped personality
+                                 ├── source, documentation, runtime roots
+                                 └── session observations
 Supervisor <── finding + evidence + limits + useful next check
 ```
 
@@ -87,9 +88,9 @@ for turning existing artifacts and functional units into agent-accessible object
 ## Next milestones
 
 v0.1 tests the three scenarios through Hermes, comparing answer quality and usage
-against one agent with the same evidence and capabilities.
+against one agent with the same evidence and session access.
 
-**v0.2 focuses on automatically generating and deploying Agent Objects from the
-existing service registry and deployment definitions.** This includes updating
-bindings on moves, preserving identity, and retiring removed objects. See the
-[roadmap and acceptance cases](docs/roadmap.md).
+**v0.2 focuses on automatically attaching Agent Objects to deployed resources.**
+It discovers roots and relationships from existing deployment data, while keeping
+the personality authored with the object. See the [roadmap and acceptance
+cases](docs/roadmap.md).

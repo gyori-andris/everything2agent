@@ -14,7 +14,7 @@ earlier finding and evidence references supplied explicitly.
 For every result ask: does this explain the symptom, or only establish that one
 component appears healthy? What evidence supports it? Does that evidence cover the
 incident window and failure mode? Is actual collection working? Are there conflicting
-observations? Is the runtime binding sufficient for the claim?
+observations? Does the worker's current session actually cover the claim?
 
 Probe when the answer is partial, freshness or coverage is unclear, a causal claim
 exceeds the evidence, or multiple observations disagree. Ask a discriminating
@@ -31,7 +31,7 @@ health indicator. These checks reduce, but cannot eliminate, hidden blind spots.
 Keep routing under one supervisor in the initial experiment. Track questions already
 asked and evidence already obtained. A new agent repeating the same stale source
 is not independent corroboration. Related-object links are hints; an unlisted owner
-or missing capability is a valid unresolved outcome.
+or missing object is a valid unresolved outcome.
 
 Default trial budget: six worker calls including follow-ups. A budget limit is a
 reason to report unresolved work, never a reason to fabricate closure. Record worker

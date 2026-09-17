@@ -2,37 +2,42 @@
 
 ## Purpose
 
-An Agent Object is a resource represented by an agent with explicit responsibility,
-relevant context, and bound tools. Object2Agent is the act of constructing that
-representation. This draft describes documents and behavior, not a new runtime.
+An Agent Object is an existing resource represented by an agent with a scoped
+personality, explicit responsibility, and relevant context. Object2Agent is the
+act of attaching that agent facet to an object. This draft describes documents and
+behavior, not a compiler or a new runtime.
 
 ## Object document
 
 Each object has an `OBJECT.md` containing YAML frontmatter and Markdown prose.
 `type: Agent Object`, `title`, and `resource` describe the concept. A local
-`agent_object` extension records `version`, a stable `id`, and optional `context`,
-`bindings`, and `related` references. IDs identify deployed instances: two brokers
-using the same software are different objects. Paths are relative to the document.
+`agent_object` extension records `version`, a stable `id`, and optional `roots`,
+`personality`, `context`, and `related` references. IDs identify deployed instances:
+two brokers using the same software are different objects. Paths are relative to
+the document.
 
-The body explains responsibility, useful capabilities, external dependencies,
-and known limitations. It may link source, runbooks, API descriptions, or OKF
-knowledge. Context references are retrieved as needed, not all inserted into
-every prompt. The document describes a resource; it does not embed live state.
+The personality explains how the agent represents this object: its responsibility,
+way of working, external dependencies, and known limitations. It may link source,
+runbooks, API descriptions, or OKF knowledge. Context references are retrieved as
+needed, not all inserted into every prompt. The document describes a resource; it
+does not embed live state.
 
-Bindings are deployment-local names resolved to source access, tools, credentials,
-or sandbox mounts. A declaration of access is not an access grant. A host must
-enforce actual scope. A skill alone cannot isolate filesystem or container access.
+Roots identify the source, documentation, runtime, or data that make up the object.
+They are addresses and context anchors, not an access-control language. A Hermes
+session supplies its actual working directory and tools. A skill alone cannot
+isolate filesystem or container access, and this convention does not attempt to do so.
 
 ## Where typing stops
 
-Identity, references, and the underlying tools' arguments need stable structure.
-The outer interaction accepts an open question or request. It does not require
-enumerating every question the object can answer. Existing tool schemas keep
-their own validation; this convention does not replace them.
+Identity, roots, references, and the underlying tools' arguments need stable
+structure. The outer interaction accepts an open question or request. It does not
+require enumerating every question the object can answer. Existing tool schemas
+keep their own validation; this convention does not replace them.
 
-Capabilities in prose help route work; they are neither exhaustive method lists
-nor evidence of available access. On each request, the agent checks what it can
-actually inspect. Unsupported work gets an explicit limit, not an invented result.
+Responsibility and related-object prose help route work; they are neither exhaustive
+method lists nor evidence of available access. On each request, the agent checks
+what it can actually inspect in its current session. Unsupported work gets an
+explicit limit, not an invented result.
 
 Replies use ordinary language. They convey an answer, supporting observations,
 their coverage and freshness, remaining uncertainty, and a useful next check when
@@ -41,10 +46,10 @@ Structured results may be added by an application that has a concrete consumer.
 
 ## Responsibility and access
 
-An object may have deep access to its own source, documentation, and runtime.
+An object session may have deep access to its own source, documentation, and runtime.
 Source knowledge, runtime visibility, and mutation authority are separate: having
-the source does not mean the running configuration matches it. Inspection rights
-do not imply permission to deploy changes. The example permits inspection only.
+the source does not mean the running configuration matches it. The session's tools
+and host policy determine what it can change. The example permits inspection only.
 
 Containment, dependency, and delegation differ. Being located in CT111 does not
 force every question through a CT111 agent. Related objects form useful navigation
@@ -94,5 +99,5 @@ Do not truncate uncertainty merely to meet a summary-size target.
 An object can run in a Hermes session, another agent host, or behind A2A. Its tools
 may come from MCP or local adapters. Transport and process count are deployment
 choices. Object identity persists independently of any particular model session.
-No new scheduling, Kubernetes reconciliation, or distributed transaction system is
-specified here.
+No new scheduling, profile compiler, Kubernetes reconciliation, or distributed
+transaction system is specified here.

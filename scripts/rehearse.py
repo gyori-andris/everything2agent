@@ -35,12 +35,14 @@ def render_packet(name, object_id):
         raise ValueError(f"Unknown object: {object_id}")
     data = scenario_data(name)
     document = (EXAMPLE / object_id / "OBJECT.md").read_text()
+    personality = (EXAMPLE / object_id / "PERSONALITY.md").read_text()
     # Context is explicitly limited to the example's authored local knowledge file.
     context_path = EXAMPLE / object_id / "knowledge.md"
     context = context_path.read_text() if context_path.exists() else "No additional fixture context."
     return (
         f"SYNTHETIC WORKER PACKET — {object_id}\n\n{document}\n"
-        f"Context:\n{context}\n\nEvidence:\n{data['packets'][object_id]}\n\n"
+        f"Personality:\n{personality}\n\nContext:\n{context}\n\n"
+        f"Evidence:\n{data['packets'][object_id]}\n\n"
         "Answer the supervisor's separately supplied question using this evidence. "
         "Further unavailable observations must be reported as unavailable."
     )

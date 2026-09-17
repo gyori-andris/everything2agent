@@ -3,7 +3,7 @@
 Question: **Why is the bathroom Shelly unavailable?**
 
 The directory below is all the supervisor initially needs. Each worker receives
-only its own OBJECT.md, relevant context, and its scenario packet. The supervisor
+only its own OBJECT.md, personality, relevant context, and scenario packet. The supervisor
 can ask follow-ups and receive excerpts. These files describe fictional observations
 based on the proposed homelab layout, not measurements of the user's systems.
 

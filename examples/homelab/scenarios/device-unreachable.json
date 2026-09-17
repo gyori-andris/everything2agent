@@ -2,7 +2,7 @@
   "question": "At 2026-09-17T01:15:00Z, why is the bathroom Shelly unavailable?",
   "packets": {
     "home-assistant": "HA runtime API at 01:15Z: switch.shelly_bathroom unavailable since 00:42Z. MQTT integration connected. Runtime subscription: shellies/bathroom/status. No payload received during 00:42–01:15Z; application observations continuous. This says nothing about device power.",
-    "mosquitto": "Broker runtime at 01:15Z: healthy. Collection continuous through 01:15Z. Other clients are publishing. Client shelly-bathroom last published at 00:41:28Z to shellies/bathroom/status and is now disconnected. No authentication rejection for this client in 00:40–01:15Z. Device and access-point state are outside this binding.",
+    "mosquitto": "Broker runtime at 01:15Z: healthy. Collection continuous through 01:15Z. Other clients are publishing. Client shelly-bathroom last published at 00:41:28Z to shellies/bathroom/status and is now disconnected. No authentication rejection for this client in 00:40–01:15Z. Device and access-point state are outside this object's observations.",
     "network": "At 01:15Z probes from CT111 and the IoT gateway receive no response from the registered bathroom Shelly IP. AP association table at 01:15Z shows its registered MAC absent; other IoT clients are attached. No device power or firmware observation is available. These observations cannot distinguish loss of power from failure to associate."
   },
   "evaluation": {

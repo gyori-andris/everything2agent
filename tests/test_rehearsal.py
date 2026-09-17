@@ -17,6 +17,10 @@ class PacketTests(unittest.TestCase):
                 self.assertNotIn(evidence, start)
                 packet = rehearse.render_packet(name, object_id)
                 self.assertIn(evidence, packet)
+                personality = (
+                    rehearse.EXAMPLE / object_id / "PERSONALITY.md"
+                ).read_text()
+                self.assertIn(personality, packet)
                 for other, other_evidence in data["packets"].items():
                     if other != object_id:
                         self.assertNotIn(other_evidence, packet)

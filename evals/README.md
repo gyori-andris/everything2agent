@@ -1,8 +1,8 @@
 # Does the boundary help?
 
 These are behavioral experiments, not a claim that Markdown enforces isolation.
-The Python tests only check fixture partitioning. Actual capability boundaries
-require runtime tests after real bindings exist.
+The Python tests only check fixture partitioning. Actual session boundaries require
+runtime tests after a real object session exists.
 
 ## Compare like with like
 
@@ -26,7 +26,7 @@ forcing it to read irrelevant files. Record the cost of keeping object context c
 - Stale telemetry produces an explicit missing-observation outcome.
 - Topic mismatch is found by comparing both sides, despite healthy services.
 - Device unreachability is not silently promoted to confirmed power failure.
-- Missing capability or an unlisted owner produces a visible next step.
+- A missing object or an unlisted owner produces a visible next step.
 - A budget stop is reported as unresolved, not successful.
 
 After the normal stale-telemetry run, inject the abbreviated worker answer described
