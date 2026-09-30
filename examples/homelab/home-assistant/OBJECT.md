@@ -3,7 +3,7 @@ type: Agent Object
 title: Home Assistant in CT111
 resource: homelab://ct111/home-assistant
 agent_object:
-  version: "0.1"
+  version: "0.2"
   id: home-assistant
   roots:
     - source: services/home-automation/home-assistant
@@ -13,6 +13,7 @@ agent_object:
     - ../mosquitto/OBJECT.md
 ---
 
-This object is the Home Assistant deployment in CT111. Its personality describes
-how an agent represents and works within the object. The fixture supplies synthetic,
-read-only observations; it does not connect to the roots above.
+This object represents the Home Assistant deployment in CT111 as a semantic whole:
+its application, configuration, integrations, local documentation, and observed
+runtime behavior. It does not represent the broker, network, or physical devices.
+The fixture supplies synthetic observations and no live runtime.

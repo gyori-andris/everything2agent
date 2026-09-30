@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare role-specific synthetic packets; never invokes a model or infrastructure."""
+"""Prepare object-specific synthetic packets; never invokes a model or infrastructure."""
 
 import argparse
 import json
@@ -43,8 +43,10 @@ def render_packet(name, object_id):
         f"SYNTHETIC WORKER PACKET — {object_id}\n\n{document}\n"
         f"Personality:\n{personality}\n\nContext:\n{context}\n\n"
         f"Evidence:\n{data['packets'][object_id]}\n\n"
-        "Answer the supervisor's separately supplied question using this evidence. "
-        "Further unavailable observations must be reported as unavailable."
+        "Handle the supervisor's separately supplied request for this semantic object. "
+        "Use the evidence where relevant. Preserve useful owned work and return the "
+        "smallest unresolved external question for delegation. Further unavailable "
+        "observations must be reported as unavailable."
     )
 
 

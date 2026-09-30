@@ -1,13 +1,14 @@
-# Synthetic homelab experiment
+# Synthetic infrastructure experiment
 
 Question: **Why is the bathroom Shelly unavailable?**
 
 The directory below is all the supervisor initially needs. Each worker receives
 only its own OBJECT.md, personality, relevant context, and scenario packet. The supervisor
 can ask follow-ups and receive excerpts. These files describe fictional observations
-based on the proposed homelab layout, not measurements of the user's systems.
+based on an illustrative homelab layout, not measurements of the user's systems or
+a backend required by the Agent Objects convention.
 
-| ID | Responsibility | Document |
+| ID | Semantic object | Document |
 | --- | --- | --- |
 | home-assistant | Entity state, integration configuration, application observations | [OBJECT.md](home-assistant/OBJECT.md) |
 | mosquitto | Broker behavior, MQTT clients, broker configuration and telemetry | [OBJECT.md](mosquitto/OBJECT.md) |
