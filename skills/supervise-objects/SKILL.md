@@ -1,20 +1,26 @@
 ---
 name: supervise-objects
-description: Delegate open infrastructure questions to Agent Objects, probe incomplete evidence, and synthesize an answer while tracking context and investigation cost.
+description: Delegate arbitrary requests to Agent Objects, probe incomplete evidence, and synthesize an answer while tracking context and investigation cost.
 ---
 
 # Supervise Agent Objects
 
-Start from the user's question and a small directory of object identities and
-responsibilities. Select the most relevant objects directly; infrastructure nesting
-does not require calling every ancestor. Pass a bounded question and enough task
-context. Use the same object identity on follow-up; fresh sessions may need the
-earlier finding and evidence references supplied explicitly.
+Start from the user's request and a small directory of object identities and semantic
+ownership. Select the most relevant objects directly; containment does not require
+calling every ancestor. Pass the actual request or a bounded portion of it with enough
+task context. Use the same object identity on follow-up; fresh sessions may need the
+earlier result and evidence references supplied explicitly.
+
+An object's border is not a rejection boundary. Accept useful owned work from the
+worker and route its precise unresolved question onward. Related-object links are
+hints, not gates. When the suggested target is missing or wrong, resolve another
+owner from the directory. When no owner exists, report an unowned concern rather
+than dropping the work or assigning it silently to the nearest object.
 
 For every result ask: does this explain the symptom, or only establish that one
 component appears healthy? What evidence supports it? Does that evidence cover the
 incident window and failure mode? Is actual collection working? Are there conflicting
-observations? Is the runtime binding sufficient for the claim?
+observations? Does the worker's current session actually cover the claim?
 
 Probe when the answer is partial, freshness or coverage is unclear, a causal claim
 exceeds the evidence, or multiple observations disagree. Ask a discriminating
@@ -29,11 +35,12 @@ verify the claimed cause against at least one relevant observation beyond a gene
 health indicator. These checks reduce, but cannot eliminate, hidden blind spots.
 
 Keep routing under one supervisor in the initial experiment. Track questions already
-asked and evidence already obtained. A new agent repeating the same stale source
-is not independent corroboration. Related-object links are hints; an unlisted owner
-or missing capability is a valid unresolved outcome.
+asked, objects already visited, and evidence already obtained. A new agent repeating
+the same stale source is not independent corroboration. Terminate repeated routes as
+explicitly unresolved rather than creating a delegation loop.
 
 Default trial budget: six worker calls including follow-ups. A budget limit is a
 reason to report unresolved work, never a reason to fabricate closure. Record worker
 and supervisor usage separately. Summarize the answer, evidence, remaining limits,
-and any next step. Keep changes as proposals in this example.
+delegation path, and any next step. The synthetic example has no live runtime, so
+proposed changes remain proposals.

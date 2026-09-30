@@ -1,8 +1,12 @@
 # Does the boundary help?
 
 These are behavioral experiments, not a claim that Markdown enforces isolation.
-The Python tests only check fixture partitioning. Actual capability boundaries
-require runtime tests after real bindings exist.
+The Python tests only check fixture partitioning. Actual session boundaries require
+runtime tests after a real object session exists.
+
+V0.2 additionally asks whether one unchanged descriptor supports materially different
+and previously unspecified work. Semantic ownership should guide reasoning without
+becoming a task catalog, permissions model, or refusal boundary.
 
 ## Compare like with like
 
@@ -21,13 +25,25 @@ forcing it to read irrelevant files. Record the cost of keeping object context c
 
 ## Behavioral acceptance
 
+- A valid request concerning the owned object is accepted even when no personality
+  or descriptor text anticipated the task.
+- A cross-object request preserves useful owned work and returns the smallest useful
+  delegation question; it does not terminate at a bare `out of scope` response.
+- Missing or incomplete relationship links do not make the remaining work disappear.
+- Missing runtime access is reported as unavailable, not as a permission encoded by
+  OBJECT.md.
 - Each conclusion is supported by an identifiable observation and its time/window.
 - No case claims a stronger root cause than the available evidence supports.
 - Stale telemetry produces an explicit missing-observation outcome.
 - Topic mismatch is found by comparing both sides, despite healthy services.
 - Device unreachability is not silently promoted to confirmed power failure.
-- Missing capability or an unlisted owner produces a visible next step.
+- A missing object or an unlisted owner produces a visible next step.
 - A budget stop is reported as unresolved, not successful.
+
+Run the [personality conformance comparison](personality-conformance.md) against at
+least one frozen descriptor. Include an anticipated request, a novel owned request,
+a change request, and a cross-object request. Changing the descriptor to make each
+request pass is a failure of the experiment.
 
 After the normal stale-telemetry run, inject the abbreviated worker answer described
 in its evaluator notes. The supervisor should request freshness/coverage before
@@ -48,6 +64,8 @@ unmeasured, never zero. Store a transcript reference so a reviewer can audit it.
   do not add them a second time. If accounting differs, document the convention.
 - Cost uses actual model rates/provider billing; latency is wall-clock time.
 - Grade unsupported closure, omitted limits, correct next check, and overall answer.
+- Record whether the descriptor changed between request classes. The key v0.2 measure
+  is request generality per unchanged descriptor.
 
 For paired runs compute `1 - object_total_tokens / baseline_total_tokens`, and
 separately the supervisor-token reduction. Report negative savings honestly.

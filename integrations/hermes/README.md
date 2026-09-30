@@ -24,16 +24,18 @@ perform the same handoffs using the supported delegation mechanism of a pinned
 Hermes version. A2A is optional if objects are served independently. Do not invent
 A2A cards or Hermes configuration and label them compatible without testing them.
 
-## Binding real resources later
+## Hosting a real object session later
 
-The deployment resolves an object's binding names to the actual source checkout,
-documentation, runtime adapter, and telemetry tools. Scope credentials and mounts
-there. Access to one container should not silently expose a host-wide container
-socket. Full knowledge of the relevant source and docs is compatible with a small
-prompt: retain access and retrieve what the question needs.
+The session resolves the object's source and documentation references and receives
+whatever runtime environment the host supplies. These facilities are not declared or
+granted by OBJECT.md. A host may still enforce security around credentials, mounts,
+or sockets, but that mechanism remains outside the semantic Agent Object convention.
+Full availability of relevant source and documentation is compatible with a small
+prompt: retain context addresses and retrieve what the request needs.
 
 Pin resource revisions and record observation timestamps. Keep model/provider
 selection in runtime configuration so the object identity stays portable. Runtime
 state and secrets stay outside the object document and repository.
 
-See [v0.2 deployment generation](../../docs/roadmap.md) for the next milestone.
+See the [generic roadmap](../../docs/roadmap.md). Hermes is one possible runtime
+experiment, not the deployment model of the primitive.
